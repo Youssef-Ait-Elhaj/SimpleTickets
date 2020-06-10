@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +193,7 @@
       <workItem from="1591055027753" duration="281000" />
       <workItem from="1591313139018" duration="1330000" />
       <workItem from="1591780686810" duration="220000" />
-      <workItem from="1591791140568" duration="18596000" />
+      <workItem from="1591791140568" duration="20172000" />
     </task>
     <servers />
   </component>
@@ -213,6 +213,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="141" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1366.738@0.30.1366.738" timestamp="1591793832307" />
+    <state x="416" y="150" width="524" height="494" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591821975996">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="416" y="150" width="524" height="494" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.1366.738@0.30.1366.738" timestamp="1591821975996" />
     <state x="293" y="42" width="784" height="709" key="#phpunit.xml.dist" timestamp="1591793740468">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
