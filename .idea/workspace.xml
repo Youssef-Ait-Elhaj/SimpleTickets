@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +193,7 @@
       <workItem from="1591055027753" duration="281000" />
       <workItem from="1591313139018" duration="1330000" />
       <workItem from="1591780686810" duration="220000" />
-      <workItem from="1591791140568" duration="13424000" />
+      <workItem from="1591791140568" duration="18596000" />
     </task>
     <servers />
   </component>
@@ -239,13 +237,21 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state width="1324" height="167" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1591794242114" />
-    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog" timestamp="1591794589209">
+    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog" timestamp="1591817311842">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog/0.30.1366.738@0.30.1366.738" timestamp="1591794589209" />
+    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog/0.30.1366.738@0.30.1366.738" timestamp="1591817311842" />
+    <state x="490" y="321" width="375" height="155" key="NewPhpFileDialog" timestamp="1591817304623">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="490" y="321" width="375" height="155" key="NewPhpFileDialog/0.30.1366.738@0.30.1366.738" timestamp="1591817304623" />
     <state x="275" y="30" key="SettingsEditor" timestamp="1591792041003">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="275" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1591792041003" />
+    <state x="347" y="177" key="run.anything.popup" timestamp="1591814919733">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="347" y="177" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1591814919733" />
   </component>
 </project>
