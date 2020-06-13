@@ -26,10 +26,10 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // get user type
-            $choice = $form->get('roles')->getData();
-            foreach ($choice as $v) {
-                echo $v . ' | ';
-            }
+//            $choice = $form->get('roles')->getData();
+//            foreach ($choice as $v) {
+//                echo $v . ' | ';
+//            }
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
