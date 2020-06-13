@@ -30,7 +30,6 @@ class RegistrationController extends AbstractController
             foreach ($choice as $v) {
                 echo $v . ' | ';
             }
-
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
