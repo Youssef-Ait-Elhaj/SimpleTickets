@@ -26,8 +26,10 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // get user type
-            $choice = $form->get('role')->getData();
-            echo "choice: " . $choice;
+            $choice = $form->get('roles')->getData();
+            foreach ($choice as $v) {
+                echo $v . ' | ';
+            }
 
             // encode the plain password
             $user->setPassword(
@@ -35,7 +37,7 @@ class RegistrationController extends AbstractController
                     $user,
                     $form->get('plainPassword')->getData()
                 )
-            )->setRole($user->getRole());
+            )->setRoles($user->getRoles());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
