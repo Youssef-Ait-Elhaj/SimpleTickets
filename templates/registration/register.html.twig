@@ -15,7 +15,12 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
+    Role
+    <select name="role" class="mdb-select md-form colorful-select dropdown-primary">
+        <option value="client">Client</option>
+        <option value="technician">Technician</option>
+    </select>
+        <button type="submit" class="btn btn-primary">Register</button>
+    {{ data }}
     {{ form_end(registrationForm) }}
 {% endblock %}

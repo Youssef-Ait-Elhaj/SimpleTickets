@@ -113,4 +113,13 @@ class User implements UserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+    public function __toString()
+    {
+        $str = "email: " . $this->getEmail() . "<br>" . "roles: ";
+        foreach ($this->getRoles() as $v) {
+            $str = $str . ($v . " | ");
+        }
+        return $str;
+    }
 }

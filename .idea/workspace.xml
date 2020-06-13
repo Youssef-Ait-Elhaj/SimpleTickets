@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +169,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -197,7 +200,13 @@
       <workItem from="1591313139018" duration="1330000" />
       <workItem from="1591780686810" duration="220000" />
       <workItem from="1591791140568" duration="21947000" />
-      <workItem from="1591866942099" duration="15746000" />
+      <workItem from="1591866942099" duration="19959000" />
+      <workItem from="1591898120477" duration="9208000" />
+      <workItem from="1591952433605" duration="12871000" />
+      <workItem from="1591976316999" duration="3282000" />
+      <workItem from="1591986521908" duration="796000" />
+      <workItem from="1591987869596" duration="3922000" />
+      <workItem from="1592043218297" duration="1048000" />
     </task>
     <servers />
   </component>
@@ -217,6 +226,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="141" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1366.738@0.30.1366.738" timestamp="1591793832307" />
+    <state x="381" y="30" width="594" height="734" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592044276708">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="381" y="30" width="594" height="734" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.30.1366.738@0.30.1366.738" timestamp="1592044276708" />
     <state x="416" y="150" width="524" height="494" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591821975996">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -253,13 +266,13 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="490" y="321" width="375" height="155" key="NewPhpFileDialog/0.30.1366.738@0.30.1366.738" timestamp="1591817304623" />
-    <state x="269" y="30" key="SettingsEditor" timestamp="1591880399059">
+    <state x="169" y="30" key="SettingsEditor" timestamp="1591953359762">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="269" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1591880399059" />
-    <state x="347" y="177" key="run.anything.popup" timestamp="1591814919733">
+    <state x="169" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1591953359762" />
+    <state x="347" y="177" width="672" height="677" key="run.anything.popup" timestamp="1591958227628">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="347" y="177" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1591814919733" />
+    <state x="347" y="177" width="672" height="677" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1591958227628" />
   </component>
 </project>
