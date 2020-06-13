@@ -25,16 +25,17 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // access user type
-            $data = $form->getData();
-            echo "data: " . $data;
+            // get user type
+            $choice = $form->get('role')->getData();
+            echo "choice: " . $choice;
+
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
-            )->setRoles($user->getRoles());
+            )->setRole($user->getRole());
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
@@ -50,7 +51,6 @@ class RegistrationController extends AbstractController
         }
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
-//            'data' => $data,
         ]);
     }
 }

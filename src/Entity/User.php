@@ -26,9 +26,9 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string")
      */
-    private $roles = [];
+    private $role;
 
     /**
      * @var string The hashed password
@@ -66,18 +66,18 @@ class User implements UserInterface
     /**
      * @see UserInterface
      */
-    public function getRoles(): array
+    public function getRole(): string
     {
-        $roles = $this->roles;
+        $role = $this->role;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $role = 'ROLE_USER';
 
-        return array_unique($roles);
+        return $role;
     }
 
-    public function setRoles(array $roles): self
+    public function setRole(string $role): self
     {
-        $this->roles = $roles;
+        $this->role = $role;
 
         return $this;
     }
@@ -117,7 +117,7 @@ class User implements UserInterface
     public function __toString()
     {
         $str = "email: " . $this->getEmail() . "<br>" . "roles: ";
-        foreach ($this->getRoles() as $v) {
+        foreach ($this->getRole() as $v) {
             $str = $str . ($v . " | ");
         }
         return $str;
