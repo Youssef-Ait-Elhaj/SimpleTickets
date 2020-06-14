@@ -14,9 +14,9 @@ class AccessDeniedHandler implements AccessDeniedHandlerInterface
     public function handle(Request $request, AccessDeniedException $accessDeniedException)
     {
         $content = '<html><head><title>Access Denied</title></head><body>
-        <h1>403</h1>
+        <h1>403 ACCESS DENIED</h1>
         <h1>You are not authorized to access this resource</h1>
         </body></html>';
-        return new Response($content, 403);
+        return new Response($content, 403); // send html response
     }
 }
