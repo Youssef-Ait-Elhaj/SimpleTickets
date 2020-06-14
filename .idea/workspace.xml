@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Security/AccessDeniedHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +204,8 @@
       <workItem from="1591987869596" duration="3922000" />
       <workItem from="1592043218297" duration="3251000" />
       <workItem from="1592074744672" duration="5376000" />
-      <workItem from="1592085362301" duration="868000" />
+      <workItem from="1592085362301" duration="3099000" />
+      <workItem from="1592133625057" duration="2681000" />
     </task>
     <servers />
   </component>
@@ -257,10 +257,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state width="1324" height="167" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1591830795433" />
-    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog" timestamp="1591817311842">
+    <state x="363" y="112" width="745" height="569" key="NewPhpClassDialog" timestamp="1592135021765">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="363" y="112" width="630" height="569" key="NewPhpClassDialog/0.30.1366.738@0.30.1366.738" timestamp="1591817311842" />
+    <state x="363" y="112" width="745" height="569" key="NewPhpClassDialog/0.30.1366.738@0.30.1366.738" timestamp="1592135021765" />
     <state x="490" y="321" width="375" height="155" key="NewPhpFileDialog" timestamp="1591817304623">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -273,5 +273,9 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="347" y="177" width="672" height="677" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1591958227628" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592136812529">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738@0.30.1366.738" timestamp="1592136812529" />
   </component>
 </project>

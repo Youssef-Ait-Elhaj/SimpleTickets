@@ -16,6 +16,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            access_denied_handler: App\Security\AccessDeniedHandler
             lazy: true
            # form_login:
            #     login_path: login
@@ -40,7 +41,3 @@ security:
     access_control:
         - { path: '^/register', roles: ROLE_ADMIN }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/admin/login, roles: PUBLIC_ACCESS }
