@@ -43,6 +43,11 @@ class User implements UserInterface
      */
     private $tickets;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $username;
+
     public function __construct()
     {
         $this->tickets = new ArrayCollection();
@@ -110,6 +115,14 @@ class User implements UserInterface
     }
 
     /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
      * @see UserInterface
      */
     public function getSalt()
@@ -126,12 +139,9 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        $str = "email: " . $this->getEmail() . "<br>" . "roles: ";
-        foreach ($this->getRoles() as $v) {
-            $str = $str . ($v . " | ");
-        }
+        $str = $this->username;
         return $str;
     }
 
@@ -162,6 +172,13 @@ class User implements UserInterface
                 $ticket->setTechnician(null);
             }
         }
+
+        return $this;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }
