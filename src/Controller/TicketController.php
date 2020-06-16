@@ -27,13 +27,13 @@ class TicketController extends AbstractController
     public function createTicket(Request $request, ObjectManager $manager)
     {
         $ticket = new Ticket();
-//        $ticket->setCustomer($customer);
-        // get current logged in customer then assign it to ticket
+        // make sure user is logged-in then access his ID
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        $user = $this->getUser();
-        $customer = new User();
-        $customer->setUsername($user->getUsername());
-        $customer->setId($user->getId());
+        $userId = $this->getUser()->getId();   // current logged-in user id
+
+        $customer = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($userId);
         $ticket->setCustomer($customer);
         $form = $this->createForm(TicketFormType::class, $ticket);
         $form->handleRequest($request);

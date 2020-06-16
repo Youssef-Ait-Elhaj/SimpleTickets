@@ -141,6 +141,8 @@ class User implements UserInterface
 
     public function __toString(): string
     {
+        if (empty($this->username))
+            return "";
         $str = $this->username;
         return $str;
     }

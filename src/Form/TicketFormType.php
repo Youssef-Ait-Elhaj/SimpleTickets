@@ -31,15 +31,15 @@ class TicketFormType extends AbstractType
             ->add('body')
             ->add('assignmentDate')
 //            ->add('technician')
-            ->add('technician', EntityType::class, [
-                'class' => User::class,
-                'query_builder' => function(EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                        ->andWhere('u.roles LIKE :role')
-                        ->setParameter('role', '%"ROLE_TECHNICIAN"%');
-                },
-                'choice_label' => 'username'
-            ])
+//            ->add('technician', EntityType::class, [
+//                'class' => User::class,
+//                'query_builder' => function(EntityRepository $er) {
+//                    return $er->createQueryBuilder('u')
+//                        ->andWhere('u.roles LIKE :role')
+//                        ->setParameter('role', '%"ROLE_TECHNICIAN"%');
+//                },
+//                'choice_label' => 'username'
+//            ])
 //            ->add('customer')
         ;
     }

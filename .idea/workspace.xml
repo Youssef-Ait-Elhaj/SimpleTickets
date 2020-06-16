@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/TicketFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200615102745.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ticket/newticket.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TicketFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TicketFormType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +212,8 @@
       <workItem from="1592133625057" duration="4917000" />
       <workItem from="1592153698479" duration="6513000" />
       <workItem from="1592209970731" duration="8487000" />
-      <workItem from="1592222779635" duration="19951000" />
+      <workItem from="1592222779635" duration="20297000" />
+      <workItem from="1592297470609" duration="2676000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -289,38 +274,38 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="466" y="157" width="424" height="480" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1591009043068" />
-    <state width="1324" height="209" key="GridCell.Tab.0.bottom" timestamp="1592227727157">
+    <state width="1324" height="209" key="GridCell.Tab.0.bottom" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1592227727157" />
-    <state width="1324" height="209" key="GridCell.Tab.0.center" timestamp="1592227727157">
+    <state width="1324" height="209" key="GridCell.Tab.0.bottom/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
+    <state width="1324" height="209" key="GridCell.Tab.0.center" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1592227727157" />
-    <state width="1324" height="209" key="GridCell.Tab.0.left" timestamp="1592227727157">
+    <state width="1324" height="209" key="GridCell.Tab.0.center/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
+    <state width="1324" height="209" key="GridCell.Tab.0.left" timestamp="1592262676199">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1592227727157" />
-    <state width="1324" height="209" key="GridCell.Tab.0.right" timestamp="1592227727157">
+    <state width="1324" height="209" key="GridCell.Tab.0.left/0.30.1366.738@0.30.1366.738" timestamp="1592262676199" />
+    <state width="1324" height="209" key="GridCell.Tab.0.right" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1592227727157" />
-    <state width="1324" height="209" key="GridCell.Tab.1.bottom" timestamp="1592227727158">
+    <state width="1324" height="209" key="GridCell.Tab.0.right/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
+    <state width="1324" height="209" key="GridCell.Tab.1.bottom" timestamp="1592262676201">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.1.bottom/0.30.1366.738@0.30.1366.738" timestamp="1592227727158" />
-    <state width="1324" height="209" key="GridCell.Tab.1.center" timestamp="1592227727158">
+    <state width="1324" height="209" key="GridCell.Tab.1.bottom/0.30.1366.738@0.30.1366.738" timestamp="1592262676201" />
+    <state width="1324" height="209" key="GridCell.Tab.1.center" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.1.center/0.30.1366.738@0.30.1366.738" timestamp="1592227727158" />
-    <state width="1324" height="209" key="GridCell.Tab.1.left" timestamp="1592227727157">
+    <state width="1324" height="209" key="GridCell.Tab.1.center/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
+    <state width="1324" height="209" key="GridCell.Tab.1.left" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.1.left/0.30.1366.738@0.30.1366.738" timestamp="1592227727157" />
-    <state width="1324" height="209" key="GridCell.Tab.1.right" timestamp="1592227727158">
+    <state width="1324" height="209" key="GridCell.Tab.1.left/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
+    <state width="1324" height="209" key="GridCell.Tab.1.right" timestamp="1592262676200">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state width="1324" height="209" key="GridCell.Tab.1.right/0.30.1366.738@0.30.1366.738" timestamp="1592227727158" />
+    <state width="1324" height="209" key="GridCell.Tab.1.right/0.30.1366.738@0.30.1366.738" timestamp="1592262676200" />
     <state x="363" y="112" width="745" height="569" key="NewPhpClassDialog" timestamp="1592135021765">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
