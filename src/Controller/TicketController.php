@@ -57,10 +57,6 @@ class TicketController extends AbstractController
 //        $entityManager = $this->getDoctrine()->getManager();
 //        $ticket = $entityManager->getRepository(Ticket::class)->find($id);
 
-        if (!$ticket) {
-            throw $this->createNotFoundException('No Ticket found for id ' . $id);
-        }
-
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($ticket);
             $manager->flush();
@@ -78,6 +74,18 @@ class TicketController extends AbstractController
     public function showTicket(Ticket $ticket) {
         return $this->render('ticket/show_ticket.html.twig', [
             'ticket' => $ticket
+        ]);
+    }
+
+    /**
+     * @Route("/tickets", name="tickets_index")
+     */
+    public function findAll() {
+        $repository = $this->getDoctrine()->getRepository(Ticket::class);
+        $tickets = $repository->findAll();
+
+        return $this->render('ticket/index.html.twig', [
+            'tickets' => $tickets
         ]);
     }
 
