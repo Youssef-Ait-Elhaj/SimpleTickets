@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/ticket/edit_ticket.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ticket/show_ticket.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TicketFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TicketFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ticket/newticket.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ticket/new_ticket.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +215,7 @@
       <workItem from="1592153698479" duration="6513000" />
       <workItem from="1592209970731" duration="8487000" />
       <workItem from="1592222779635" duration="20297000" />
-      <workItem from="1592297470609" duration="2676000" />
+      <workItem from="1592297470609" duration="8341000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -222,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592165942781</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added create ticket functionality">
+      <created>1592301062973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592301062973</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +240,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Ticket Entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Ticket Entity" />
+    <MESSAGE value="Added create ticket functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added create ticket functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="30" width="696" height="734" key="#PHP" timestamp="1591793717034">
@@ -266,10 +276,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="293" y="42" width="784" height="709" key="#phpunit.xml.dist/0.30.1366.738@0.30.1366.738" timestamp="1591793740468" />
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592165941279">
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592301061784">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592165941279" />
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592301061784" />
     <state x="466" y="157" width="424" height="480" key="FileChooserDialogImpl" timestamp="1591009043068">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -318,10 +328,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="169" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1592231435187" />
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592165949145">
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592301071410">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592165949145" />
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592301071410" />
     <state x="347" y="177" width="672" height="677" key="run.anything.popup" timestamp="1591958227628">
       <screen x="0" y="30" width="1366" height="738" />
     </state>

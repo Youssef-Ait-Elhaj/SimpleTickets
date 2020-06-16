@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %} Article Details {% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Ticket No {{ ticket.id }} </h1>
+        <p>Assigned technician: {{ ticket.technician }}</p>
+        <p>Title: {{ ticket.title }}</p>
+        <p>Body: {{ ticket.body }}</p>
+        <p>Client: {{ ticket.customer }}</p>
+        <p>Assignment Date: {{ ticket.assignmentDate }}</p>
+    </div>
+{% endblock %}
