@@ -14,6 +14,7 @@
                 <th scope="col">Priority</th>
                 <th scope="col">Technician</th>
                 <th scope="col">Client</th>
+                <th scope="col">status</th>
             </tr>
             </thead>
             <tbody>
@@ -24,9 +25,26 @@
                     <td>{{ ticket.priority }}</td>
                     <td>{{ ticket.technician }}</td>
                     <td>{{ ticket.customer }}</td>
-                    <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
-                    <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
-                    <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
+{#                    {% if is_granted('ROLE_ADMIN') %}#}
+                    <td>
+                        {% if ticket.status is null %}
+                            <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
+                                APPROVE<span class="fa fa-check"></span></a>
+                            <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
+                                REJECT<span class="fa fa-times"></span></a>
+                        {% else %}
+                            {% if ticket.status == "APPROVED" %}
+                                <p class="text-success">{{ ticket.status }}</p>
+                            {% else %}
+                                <p class="text-danger"> {{ ticket.status }}</p>
+                                {% endif %}
+                        {% endif %}
+                    </td>
+                    {% if is_granted('ROLE_CLIENT') %}
+                        <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
+                        <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
+                        <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>

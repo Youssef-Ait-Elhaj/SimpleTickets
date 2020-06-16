@@ -102,14 +102,28 @@ class TicketController extends AbstractController
 
     /**
      * @IsGranted("ROLE_ADMIN")
+     * @Route("/tickets/validate/{id}", name="ticket_validate")
      */
-    public function validateTicket() {
+    public function validateTicket(Ticket $ticket) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $ticket->setStatus("APPROVED");
+        $entityManager->flush();
 
+        return $this->redirectToRoute('tickets_index');
     }
 
     /**
      * @IsGranted("ROLE_ADMIN")
+     * @Route("/tickets/reject/{id}", name="ticket_reject")
      */
+    public function rejectTicket(Ticket $ticket) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $ticket->setStatus("REJECTED");
+        $entityManager->flush();
+
+        return $this->redirectToRoute('tickets_index');
+    }
+
     public function assignTechnician() {
 
     }
