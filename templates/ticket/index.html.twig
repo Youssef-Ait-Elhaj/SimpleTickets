@@ -24,6 +24,9 @@
                     <td>{{ ticket.priority }}</td>
                     <td>{{ ticket.technician }}</td>
                     <td>{{ ticket.customer }}</td>
+                    <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
+                    <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
+                    <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
                 </tr>
             {% endfor %}
             </tbody>
