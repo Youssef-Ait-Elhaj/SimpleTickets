@@ -9,6 +9,7 @@
         <table class="table table-hover">
             <thead>
             <tr>
+                <th scope="col">Identifier</th>
                 <th scope="col">Title</th>
                 <th scope="col">Body</th>
                 <th scope="col">Priority</th>
@@ -20,26 +21,43 @@
             <tbody>
             {% for ticket in tickets %}
                 <tr class="table-primary">
+                    <td>{{ ticket.id }}</td>
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.body }}</td>
                     <td>{{ ticket.priority }}</td>
-                    <td>{{ ticket.technician }}</td>
-                    <td>{{ ticket.customer }}</td>
-{#                    {% if is_granted('ROLE_ADMIN') %}#}
                     <td>
-                        {% if ticket.status is null %}
-                            <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
-                                APPROVE<span class="fa fa-check"></span></a>
-                            <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
-                                REJECT<span class="fa fa-times"></span></a>
+                        {% if ticket.technician is null and ticket.status == "APPROVED" %}
+                            <div class="form-group">
+                                <select class="custom-select">
+                                    <option disabled>Assign Technician</option>
+                            {% for tech in technicians %}
+                                <a href="#"><option value="{{ tech.id }}">{{ tech }}</option></a>
+                            {% endfor %}
+                                </select>
+                            </div>
+                        {% elseif ticket.status == "REJECTED" %}
+                            CANNOT ASSIGN TECHNICIAN
                         {% else %}
-                            {% if ticket.status == "APPROVED" %}
-                                <p class="text-success">{{ ticket.status }}</p>
-                            {% else %}
-                                <p class="text-danger"> {{ ticket.status }}</p>
-                                {% endif %}
+                            AWAITING ADMIN APPROVAL ...
                         {% endif %}
                     </td>
+                    <td>{{ ticket.customer }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>
+                            {% if ticket.status is null %}
+                                <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
+                                    APPROVE<span class="fa fa-check"></span></a>
+                                <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
+                                    REJECT<span class="fa fa-times"></span></a>
+                            {% else %}
+                                {% if ticket.status == "APPROVED" %}
+                                    <p class="text-success">{{ ticket.status }}</p>
+                                {% else %}
+                                    <p class="text-danger"> {{ ticket.status }}</p>
+                                    {% endif %}
+                                {% endif %}
+                        </td>
+                    {% endif %}
                     {% if is_granted('ROLE_CLIENT') %}
                         <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
                         <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>

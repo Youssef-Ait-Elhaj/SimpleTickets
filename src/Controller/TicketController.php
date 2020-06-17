@@ -84,9 +84,11 @@ class TicketController extends AbstractController
     public function findAll() {
         $repository = $this->getDoctrine()->getRepository(Ticket::class);
         $tickets = $repository->findAll();
-
+        $repo = $this->getDoctrine()->getRepository(User::class);
+        $technicians = $repo->findByRole("ROLE_TECHNICIAN");
         return $this->render('ticket/index.html.twig', [
-            'tickets' => $tickets
+            'tickets' => $tickets,
+            'technicians' => $technicians
         ]);
     }
 
