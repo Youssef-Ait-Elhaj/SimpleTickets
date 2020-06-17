@@ -126,7 +126,11 @@ class TicketController extends AbstractController
         return $this->redirectToRoute('tickets_index');
     }
 
-    public function assignTechnician() {
-
+    /**
+     * @IsGranted("ROLE_ADMIN")
+     * @Route("/tickets/assign/{id}", name="ticket_assign")
+     */
+    public function assignTechnician(Ticket $ticket, $techId) {
+        echo $techId;
     }
 }

@@ -15,30 +15,53 @@
                 <th scope="col">Priority</th>
                 <th scope="col">Technician</th>
                 <th scope="col">Client</th>
-                <th scope="col">status</th>
+                <th scope="col">Status</th>
             </tr>
             </thead>
             <tbody>
             {% for ticket in tickets %}
-                <tr class="table-primary">
+                <tr class="table-active">
                     <td>{{ ticket.id }}</td>
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.body }}</td>
-                    <td>{{ ticket.priority }}</td>
                     <td>
-                        {% if ticket.technician is null and ticket.status == "APPROVED" %}
+                        {% if ticket.priority == 5 %}
+                            Very High
+                        {% elseif ticket.priority == 4 %}
+                            High
+                        {% elseif ticket.priority == 3 %}
+                            Medium
+                        {% elseif ticket.priority == 2 %}
+                            Low
+                        {% elseif ticket.priority == 1 %}
+                            Very Low
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if is_granted('ROLE_ADMIN') %}
+{#                            show assign technician select option#}
+                            {% if ticket.technician is null and ticket.status == "APPROVED" %}
                             <div class="form-group">
+                                <div class="input-group">
                                 <select class="custom-select">
-                                    <option disabled>Assign Technician</option>
+                                    <option selected>Assign Technician</option>
                             {% for tech in technicians %}
-                                <a href="#"><option value="{{ tech.id }}">{{ tech }}</option></a>
+                                <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span>
+
+                                <option value="{{ tech.id }}">{{ tech }}</option>
                             {% endfor %}
                                 </select>
+{#                                <a href="{{ path('ticket_assign', {'id': ticket.id, 'techId': tech.id}) }}">#}
+{#                                    <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span></a>#}
+                            </div>
                             </div>
                         {% elseif ticket.status == "REJECTED" %}
                             CANNOT ASSIGN TECHNICIAN
                         {% else %}
                             AWAITING ADMIN APPROVAL ...
+                        {% endif %}
+                        {% else %}
+                            No Technician Assigned Yet
                         {% endif %}
                     </td>
                     <td>{{ ticket.customer }}</td>
