@@ -16,7 +16,17 @@
                 <th scope="col">Technician</th>
                 <th scope="col">Client</th>
                 <th scope="col">Status</th>
-                <th scope="col">Assigned At</th>
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_TECHNICIAN') %}
+{#                    <th scope="col"></th>#}
+{#                    <th scope="col"></th>#}
+{#                    <th scope="col"></th>#}
+                    <th scope="col">Assigned At</th>
+                {% else %}
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Assigned At</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -42,7 +52,6 @@
                         {% if is_granted('ROLE_ADMIN') %}
 {#                            show assign technician select option#}
                             {% if ticket.technician is null and ticket.status == "APPROVED" %}
-{#                            <div class="form-group">#}
                                 <form action="{{ path('ticket_assign', {'id': ticket.id}) }}">
                                     <div class="input-group">
                                     <select name="tech" class="custom-select">
@@ -51,28 +60,25 @@
                                             <option value="{{ tech.id }}">{{ tech }}</option>
                                         {% endfor %}
                                     </select>
-{#                                    <a type="submit" href="{{ path('ticket_assign', {'id': ticket.id}) }}">#}
-{#                                        <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span></a>#}
                                         <button type="submit">
                                             <span class="fa fa-check text-success"></span></button>
                                     </div>
                                 </form>
-{#                            </div>#}
-                        {% elseif ticket.status == "REJECTED" %}
-                            <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
-                        {% elseif ticket.status == "ASSIGNED" %}
+                            {% elseif ticket.status == "REJECTED" %}
+                                <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
+                            {% elseif ticket.status == "ASSIGNED" %}
+                                <p class="text-info">{{ ticket.technician }}</p>
+                            {% else %}
+                                AWAITING ADMIN APPROVAL ...
+                            {% endif %}
+                        {% elseif is_granted('ROLE_TECHNICIAN') or is_granted('ROLE_CLIENT') %}
                             <p class="text-info">{{ ticket.technician }}</p>
-                        {%  else %}
-                            AWAITING ADMIN APPROVAL ...
-                        {% endif %}
-                        {% else %}
-                            No Technician Assigned Yet
                         {% endif %}
                     </td>
                     <td>{{ ticket.customer }}</td>
-                    {% if is_granted('ROLE_ADMIN') %}
+{#                    {% if is_granted('ROLE_ADMIN') %}#}
                         <td>
-                            {% if ticket.status is null %}
+                            {% if ticket.status is null and is_granted('ROLE_ADMIN') %}
                                 <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
                                     APPROVE<span class="fa fa-check"></span></a>
                                 <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
@@ -82,12 +88,14 @@
                                     <p class="text-success">{{ ticket.status }}</p>
                                 {% elseif ticket.status == "REJECTED" %}
                                     <p class="text-danger"> {{ ticket.status }}</p>
-                                    {% elseif ticket.status == "ASSIGNED" %}
-                                        <p class="text-info"> {{ ticket.status }}</p>
-                                    {% endif %}
+                                {% elseif ticket.status == "ASSIGNED" %}
+                                    <p class="text-info"> {{ ticket.status }}</p>
+                                {% else %}
+                                    <p class="text-dark">OPEN</p>
                                 {% endif %}
+                            {% endif %}
                         </td>
-                    {% endif %}
+{#                    {% endif %}#}
                     {% if is_granted('ROLE_CLIENT') %}
                         <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
                         <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>

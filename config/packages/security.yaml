@@ -40,5 +40,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: '^/register', roles: ROLE_ADMIN }
-        - { path: '^/tickets', roles: [ROLE_CLIENT, ROLE_ADMIN] }
+        - { path: '^/tickets', roles: [ROLE_CLIENT, ROLE_ADMIN, ROLE_TECHNICIAN] }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
