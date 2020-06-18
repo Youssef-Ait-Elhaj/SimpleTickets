@@ -16,48 +16,53 @@
                 <th scope="col">Technician</th>
                 <th scope="col">Client</th>
                 <th scope="col">Status</th>
+                <th scope="col">Assigned At</th>
             </tr>
             </thead>
             <tbody>
             {% for ticket in tickets %}
                 <tr class="table-active">
-                    <td>{{ ticket.id }}</td>
+                    <td><a href="{{ path('ticket_show', {'id': ticket.id}) }}">{{ ticket.id }}</a></td>
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.body }}</td>
                     <td>
                         {% if ticket.priority == 5 %}
-                            Very High
+                            <p style="color: #ff0000">Very High</p>
                         {% elseif ticket.priority == 4 %}
-                            High
+                            <p style="color: #FF5E5E">High</p>
                         {% elseif ticket.priority == 3 %}
-                            Medium
+                            <p style="color: #FFA500">Medium</p>
                         {% elseif ticket.priority == 2 %}
-                            Low
+                            <p style="color: #64b664">Low</p>
                         {% elseif ticket.priority == 1 %}
-                            Very Low
+                            <p style="color: #24ae24">Very Low</p>
                         {% endif %}
                     </td>
                     <td>
                         {% if is_granted('ROLE_ADMIN') %}
 {#                            show assign technician select option#}
                             {% if ticket.technician is null and ticket.status == "APPROVED" %}
-                            <div class="form-group">
-                                <div class="input-group">
-                                <select class="custom-select">
-                                    <option selected>Assign Technician</option>
-                            {% for tech in technicians %}
-                                <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span>
-
-                                <option value="{{ tech.id }}">{{ tech }}</option>
-                            {% endfor %}
-                                </select>
-{#                                <a href="{{ path('ticket_assign', {'id': ticket.id, 'techId': tech.id}) }}">#}
-{#                                    <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span></a>#}
-                            </div>
-                            </div>
+{#                            <div class="form-group">#}
+                                <form action="{{ path('ticket_assign', {'id': ticket.id}) }}">
+                                    <div class="input-group">
+                                    <select name="tech" class="custom-select">
+                                        <option selected>Assign Technician</option>
+                                        {% for tech in technicians %}
+                                            <option value="{{ tech.id }}">{{ tech }}</option>
+                                        {% endfor %}
+                                    </select>
+{#                                    <a type="submit" href="{{ path('ticket_assign', {'id': ticket.id}) }}">#}
+{#                                        <span style="padding-top: 10px; padding-left: 10px"  class="fa fa-check text-success"></span></a>#}
+                                        <button type="submit">
+                                            <span class="fa fa-check text-success"></span></button>
+                                    </div>
+                                </form>
+{#                            </div>#}
                         {% elseif ticket.status == "REJECTED" %}
-                            CANNOT ASSIGN TECHNICIAN
-                        {% else %}
+                            <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
+                        {% elseif ticket.status == "ASSIGNED" %}
+                            <p class="text-info">{{ ticket.technician }}</p>
+                        {%  else %}
                             AWAITING ADMIN APPROVAL ...
                         {% endif %}
                         {% else %}
@@ -75,8 +80,10 @@
                             {% else %}
                                 {% if ticket.status == "APPROVED" %}
                                     <p class="text-success">{{ ticket.status }}</p>
-                                {% else %}
+                                {% elseif ticket.status == "REJECTED" %}
                                     <p class="text-danger"> {{ ticket.status }}</p>
+                                    {% elseif ticket.status == "ASSIGNED" %}
+                                        <p class="text-info"> {{ ticket.status }}</p>
                                     {% endif %}
                                 {% endif %}
                         </td>
@@ -85,6 +92,11 @@
                         <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
                         <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
                         <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
+                    {% endif %}
+                    {% if ticket.status == "ASSIGNED" %}
+                        <td>{{ ticket.assignmentDate|date("m/d/Y") }}</td>
+                        {% else %}
+                        <td></td>
                     {% endif %}
                 </tr>
             {% endfor %}

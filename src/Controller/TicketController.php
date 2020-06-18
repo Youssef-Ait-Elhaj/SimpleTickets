@@ -130,7 +130,19 @@ class TicketController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @Route("/tickets/assign/{id}", name="ticket_assign")
      */
-    public function assignTechnician(Ticket $ticket, $techId) {
-        echo $techId;
+    public function assignTechnician(Ticket $ticket, Request $request) {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $techId = dump($request->query->get('tech'));
+        $technician = $entityManager->getRepository(User::class)->find($techId);
+
+        $date = new \DateTime('@'.strtotime('now'));
+
+        $ticket->setTechnician($technician);
+        $ticket->setStatus("ASSIGNED");
+        $ticket->setAssignmentDate($date);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('tickets_index');
     }
 }

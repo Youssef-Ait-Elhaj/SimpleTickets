@@ -29,7 +29,7 @@ class TicketFormType extends AbstractType
                 ]
             ])
             ->add('body')
-            ->add('assignmentDate')
+//            ->add('assignmentDate')
 //            ->add('technician')
 //            ->add('technician', EntityType::class, [
 //                'class' => User::class,

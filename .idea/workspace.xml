@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min(2).css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TicketFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TicketFormType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ticket/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ticket/index.html.twig" afterDir="false" />
     </list>
@@ -226,7 +226,8 @@
       <workItem from="1592322029038" duration="16563000" />
       <workItem from="1592383738718" duration="13201000" />
       <workItem from="1592408956896" duration="458000" />
-      <workItem from="1592409442220" duration="7128000" />
+      <workItem from="1592409442220" duration="14761000" />
+      <workItem from="1592470011934" duration="9480000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -277,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592394663683</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Savepoint5">
+      <created>1592421559680</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1592421559744</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +300,8 @@
     <MESSAGE value="Savepoint#3" />
     <MESSAGE value="Added Validate &amp; Reject ticket functionality" />
     <MESSAGE value="Savepoint4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Savepoint4" />
+    <MESSAGE value="Savepoint5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Savepoint5" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="30" width="696" height="734" key="#PHP" timestamp="1591793717034">
@@ -327,10 +336,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="293" y="42" width="784" height="709" key="#phpunit.xml.dist/0.30.1366.738@0.30.1366.738" timestamp="1591793740468" />
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592394661229">
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592421555711">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592394661229" />
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592421555711" />
     <state x="466" y="157" width="424" height="480" key="FileChooserDialogImpl" timestamp="1591009043068">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -379,10 +388,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="169" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1592231435187" />
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592394668660">
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592421573412">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592394668660" />
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592421573412" />
     <state x="347" y="177" width="672" height="677" key="run.anything.popup" timestamp="1592385984086">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
