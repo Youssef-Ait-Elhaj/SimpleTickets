@@ -4,6 +4,12 @@
 
 {% block body %}
     <div class="container">
+        <br>
+        {% if is_granted('ROLE_CLIENT') %}
+            <a href="{{ path('ticket_create') }}">
+                <button class="btn btn-lg btn-primary">Add Support Ticket</button>
+            </a>
+        {% endif %}
         <h1>Tickets</h1>
         {# table des articles #}
         <table class="table table-hover">
@@ -68,7 +74,7 @@
                             {% elseif ticket.status == "REJECTED" %}
                                 <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
                             {% elseif ticket.status == "ASSIGNED" %}
-                                <p class="text-info">{{ ticket.technician }}</p>
+                                <p class="text-black-50">{{ ticket.technician }}</p>
                             {% else %}
                                 AWAITING ADMIN APPROVAL ...
                             {% endif %}

@@ -39,17 +39,9 @@
 {#                </form>#}
                 <div>
                     <li style="list-style: none" class="nav-item">
-{#                        {% if is_granted('ROLE_ADMIN') %}#}
-{#                            <a style="color: white" class="nav-link" href="">Logged In As ADMIN - {{ app.user }}</a>#}
-{#                        {% elseif is_granted('ROLE_TECHNICIAN') %}#}
-{#                            <a style="color: white" class="nav-link" href="">Logged In As TECHNICIAN - {{ app.user }}</a>#}
-{#                        {% elseif is_granted('ROLE_CLIENT') %}#}
-{#                            <a style="color: white" class="nav-link" href="">Logged In As CLIENT - {{ app.user }}</a>#}
-{#                        {% endif %}#}
-
                         {% if app.user %}
                             <div class="mb-3">
-                                <p style="color: white">You are logged in as <i>{{ app.user.username }}</i>, <a href="{{ path('app_logout') }}">Logout</a></p>
+                                <p style="color: white">You are logged in as <strong><i>{{ app.user.username }}</i></strong>, <a href="{{ path('app_logout') }}">Logout</a></p>
                             </div>
                         {% endif %}
                     </li>

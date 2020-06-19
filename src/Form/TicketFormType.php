@@ -4,11 +4,12 @@ namespace App\Form;
 
 use App\Entity\Ticket;
 use App\Entity\User;
-use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +18,11 @@ class TicketFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
+            ->add('title', TextType::class, array(
+                'attr' => array(
+                    'class' => 'form-control'
+                )
+            ))
             ->add('priority', ChoiceType::class, [
                 'multiple' => false,
                 'choices' => [
@@ -28,7 +33,11 @@ class TicketFormType extends AbstractType
                     'Very Low' => 1
                 ]
             ])
-            ->add('body')
+            ->add('body', TextareaType::class, array(
+                'attr' => array(
+                    'class' => 'form-control'
+                )
+            ))
 //            ->add('assignmentDate')
 //            ->add('technician')
 //            ->add('technician', EntityType::class, [

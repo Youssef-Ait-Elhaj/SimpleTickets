@@ -3,11 +3,16 @@
 {% block title %}Create Ticket{% endblock %}
 
 {% block body %}
+<form method="post" style="margin-left: 25%; margin-right: 25%">
     <div class="container">
-        <h1>Create New Ticket</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="btn btn-primary">Add</button>
-        {{ form_end(form) }}
+            <h1>Create New Ticket</h1>
+            {{ form_start(form) }}
+            <br>
+            {{ form_widget(form) }}
+            <br>
+            <button type="submit" class="btn btn-primary">Add</button>
+            {{ form_end(form) }}
     </div>
+</form>
+
 {% endblock %}

@@ -3,10 +3,18 @@
 {% block body %}
     <div class="container">
         <h1>Ticket No {{ ticket.id }} </h1>
-        <p>Assigned technician: {{ ticket.technician }}</p>
-        <p>Title: {{ ticket.title }}</p>
-        <p>Body: {{ ticket.body }}</p>
-        <p>Client: {{ ticket.customer }}</p>
-        <p>Assignment Date: {{ ticket.assignmentDate }}</p>
+        {% if ticket.technician is null %}
+            <p><p><strong><i>Technician: </i></strong>No Technician Assigned Yet</p>
+        {% else %}
+            <p><strong><i>Technician: </i></strong> {{ ticket.technician }}</p>
+        {% endif %}
+        <p><strong><i>Title</i></strong>: {{ ticket.title }}</p>
+        <p><p><strong><i>Body</i></strong>: {{ ticket.body }}</p>
+        <p><p><strong><i>Client</i></strong>: {{ ticket.customer }}</p>
+        {% if ticket.technician is null %}
+            <p><strong><i>Assignment Date: </i></strong>Not Assigned Yet</p>
+        {% else %}
+            <p><strong><i>Assignment Date: </i></strong> {{ ticket.assignmentDate|date("m/d/Y") }}</p>
+        {% endif %}
     </div>
 {% endblock %}
