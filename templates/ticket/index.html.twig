@@ -37,8 +37,9 @@
             </tr>
             </thead>
             <tbody>
-            {% for ticket in tickets %}
-                <tr class="table-active">
+            {% for ticket in tickets|reverse %}
+                {% if is_granted('ROLE_CLIENT') and ticket.customer.id == app.user.id %}
+                    <tr class="table-active">
                     <td><a href="{{ path('ticket_show', {'id': ticket.id}) }}">{{ ticket.id }}</a></td>
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.body }}</td>
@@ -133,6 +134,200 @@
                             <td></td>
                     {% endif %}
                 </tr>
+                {% elseif is_granted('ROLE_TECHNICIAN') and ( ticket.technician is not null and ticket.technician.id == app.user.id )%}
+                    {#                {% elseif is_granted('ROLE_TECHNICIAN') and ticket.technician is not null and ticket.technician.id == app.user.id %}#}
+                    <tr class="table-active">
+                        <td><a href="{{ path('ticket_show', {'id': ticket.id}) }}">{{ ticket.id }}</a></td>
+                        <td>{{ ticket.title }}</td>
+                        <td>{{ ticket.body }}</td>
+                        <td>
+                            {% if ticket.priority == 5 %}
+                                <p style="color: #ff0000">Very High</p>
+                            {% elseif ticket.priority == 4 %}
+                                <p style="color: #FF5E5E">High</p>
+                            {% elseif ticket.priority == 3 %}
+                                <p style="color: #FFA500">Medium</p>
+                            {% elseif ticket.priority == 2 %}
+                                <p style="color: #64b664">Low</p>
+                            {% elseif ticket.priority == 1 %}
+                                <p style="color: #24ae24">Very Low</p>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                {#                            show assign technician select option#}
+                                {% if ticket.technician is null and ticket.status == "APPROVED" %}
+                                    <form action="{{ path('ticket_assign', {'id': ticket.id}) }}">
+                                        <div class="input-group">
+                                            <select name="tech" class="custom-select">
+                                                <option selected>Assign Technician</option>
+                                                {% for tech in technicians %}
+                                                    <option value="{{ tech.id }}">{{ tech }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <button type="submit">
+                                                <span class="fa fa-check text-success"></span></button>
+                                        </div>
+                                    </form>
+                                {% elseif ticket.status == "REJECTED" %}
+                                    <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
+                                {% elseif ticket.status == "ASSIGNED" %}
+                                    <p class="text-black-50">{{ ticket.technician }}</p>
+                                {% else %}
+                                    AWAITING ADMIN APPROVAL ...
+                                {% endif %}
+                            {% elseif is_granted('ROLE_TECHNICIAN') or is_granted('ROLE_CLIENT') %}
+                                <p class="text-black-50">{{ ticket.technician }}</p>
+                            {% endif %}
+                        </td>
+                        <td>{{ ticket.customer }}</td>
+                        {#                    {% if is_granted('ROLE_ADMIN') %}#}
+                        <td>
+                            {% if ticket.status is null and is_granted('ROLE_ADMIN') %}
+                                <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
+                                    APPROVE<span class="fa fa-check"></span></a>
+                                <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
+                                    REJECT<span class="fa fa-times"></span></a>
+                            {% else %}
+                                {% if ticket.status == "APPROVED" %}
+                                    <p class="text-success">{{ ticket.status }}</p>
+                                {% elseif ticket.status == "REJECTED" %}
+                                    <p class="text-danger"> {{ ticket.status }}</p>
+                                {% elseif ticket.status == "ASSIGNED" %}
+                                    <p class="text-info"> {{ ticket.status }}</p>
+                                {% elseif ticket.status == "DONE" %}
+                                    <p class="text-success"> {{ ticket.status }}</p>
+                                {% else %}
+                                    <p class="text-dark">OPEN</p>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                        {#                    {% endif %}#}
+                        {% if is_granted('ROLE_CLIENT') %}
+                            <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
+                            <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
+                            <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
+                        {% endif %}
+                        {% if ticket.status == "ASSIGNED" %}
+                            <td>
+                                {{ ticket.assignmentDate|date("m/d/Y") }}
+                            </td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        {#                            Show mark as done if current technician is assigned to ticket #}
+                        {% if is_granted('ROLE_TECHNICIAN') and is_granted('IS_AUTHENTICATED_FULLY') and ticket.status != "DONE" %}
+                            {% if ticket.technician is not null  %}
+                                {% if ticket.technician.id == app.user.id %}
+                                    <td><a class="text-info" href="{{ path('ticket_done', {'id': ticket.id}) }}">
+                                            Mark as done</a></td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                    </tr>
+                {% elseif is_granted('ROLE_ADMIN') %}
+                    <tr class="table-active">
+                        <td><a href="{{ path('ticket_show', {'id': ticket.id}) }}">{{ ticket.id }}</a></td>
+                        <td>{{ ticket.title }}</td>
+                        <td>{{ ticket.body }}</td>
+                        <td>
+                            {% if ticket.priority == 5 %}
+                                <p style="color: #ff0000">Very High</p>
+                            {% elseif ticket.priority == 4 %}
+                                <p style="color: #FF5E5E">High</p>
+                            {% elseif ticket.priority == 3 %}
+                                <p style="color: #FFA500">Medium</p>
+                            {% elseif ticket.priority == 2 %}
+                                <p style="color: #64b664">Low</p>
+                            {% elseif ticket.priority == 1 %}
+                                <p style="color: #24ae24">Very Low</p>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                {#                            show assign technician select option#}
+                                {% if ticket.technician is null and ticket.status == "APPROVED" %}
+                                    <form action="{{ path('ticket_assign', {'id': ticket.id}) }}">
+                                        <div class="input-group">
+                                            <select name="tech" class="custom-select">
+                                                <option selected>Assign Technician</option>
+                                                {% for tech in technicians %}
+                                                    <option value="{{ tech.id }}">{{ tech }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <button type="submit">
+                                                <span class="fa fa-check text-success"></span></button>
+                                        </div>
+                                    </form>
+                                {% elseif ticket.status == "REJECTED" %}
+                                    <p class="text-danger">CANNOT ASSIGN TECHNICIAN</p>
+                                {% elseif ticket.status == "ASSIGNED" %}
+                                    <p class="text-black-50">{{ ticket.technician }}</p>
+                                {% else %}
+                                    AWAITING ADMIN APPROVAL ...
+                                {% endif %}
+                            {% elseif is_granted('ROLE_TECHNICIAN') or is_granted('ROLE_CLIENT') %}
+                                <p class="text-black-50">{{ ticket.technician }}</p>
+                            {% endif %}
+                        </td>
+                        <td>{{ ticket.customer }}</td>
+                        {#                    {% if is_granted('ROLE_ADMIN') %}#}
+                        <td>
+                            {% if ticket.status is null and is_granted('ROLE_ADMIN') %}
+                                <a class="text-success" href="{{ path('ticket_validate', {'id': ticket.id}) }}">
+                                    APPROVE<span class="fa fa-check"></span></a>
+                                <a class="text-danger" href="{{ path('ticket_reject', {'id': ticket.id}) }}">
+                                    REJECT<span class="fa fa-times"></span></a>
+                            {% else %}
+                                {% if ticket.status == "APPROVED" %}
+                                    <p class="text-success">{{ ticket.status }}</p>
+                                {% elseif ticket.status == "REJECTED" %}
+                                    <p class="text-danger"> {{ ticket.status }}</p>
+                                {% elseif ticket.status == "ASSIGNED" %}
+                                    <p class="text-info"> {{ ticket.status }}</p>
+                                {% elseif ticket.status == "DONE" %}
+                                    <p class="text-success"> {{ ticket.status }}</p>
+                                {% else %}
+                                    <p class="text-dark">OPEN</p>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                        {#                    {% endif %}#}
+                        {% if is_granted('ROLE_CLIENT') %}
+                            <td><a class="text-info" href="{{ path('ticket_show', {'id': ticket.id}) }}">Show</a></td>
+                            <td><a class="text-info" href="{{ path('ticket_edit', {'id': ticket.id}) }}">Edit</a></td>
+                            <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
+                        {% endif %}
+                        {% if ticket.status == "ASSIGNED" %}
+                            <td>
+                                {{ ticket.assignmentDate|date("m/d/Y") }}
+                            </td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        {#                            Show mark as done if current technician is assigned to ticket #}
+                        {% if is_granted('ROLE_TECHNICIAN') and is_granted('IS_AUTHENTICATED_FULLY') and ticket.status != "DONE" %}
+                            {% if ticket.technician is not null  %}
+                                {% if ticket.technician.id == app.user.id %}
+                                    <td><a class="text-info" href="{{ path('ticket_done', {'id': ticket.id}) }}">
+                                            Mark as done</a></td>
+                                {% else %}
+                                    <td></td>
+                                {% endif %}
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                    </tr>
+                {% endif %}
             {% endfor %}
             </tbody>
         </table>

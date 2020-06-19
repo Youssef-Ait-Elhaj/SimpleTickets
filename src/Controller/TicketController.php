@@ -42,6 +42,8 @@ class TicketController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($ticket);
             $manager->flush();
+
+            return $this->redirectToRoute('tickets_index');
         }
         return $this->render('ticket/new_ticket.html.twig', [
             'form' => $form->createView(),
@@ -98,8 +100,8 @@ class TicketController extends AbstractController
     public function deleteTicket(Ticket $ticket, ObjectManager $manager) {
         $manager->remove($ticket);
         $manager->flush();
-        $res = '<html><body><h1>DELETED SUCCESSFULLY</h1></body></html>';
-        return new Response($res, 202);
+
+        return $this->redirectToRoute('tickets_index');
     }
 
     /**
