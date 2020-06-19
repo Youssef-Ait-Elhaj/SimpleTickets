@@ -127,6 +127,18 @@ class TicketController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_TECHNICIAN")
+     * @Route("/tickets/done/{id}", name="ticket_done")
+     */
+    public function markAsDoneTicket(Ticket $ticket) {
+        $entityManager = $this->getDoctrine()->getManager();
+        $ticket->setStatus("DONE");
+        $entityManager->flush();
+
+        return $this->redirectToRoute('tickets_index');
+    }
+
+    /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/tickets/assign/{id}", name="ticket_assign")
      */

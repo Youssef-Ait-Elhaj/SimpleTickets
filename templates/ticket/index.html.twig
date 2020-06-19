@@ -16,10 +16,11 @@
                 <th scope="col">Technician</th>
                 <th scope="col">Client</th>
                 <th scope="col">Status</th>
+{#                offset assigned at by 1 #}
+{#                {% if is_granted('ROLE_TECHNICIAN') %}#}
+{#                    <th scope="col"></th>#}
+{#                {% endif %}#}
                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_TECHNICIAN') %}
-{#                    <th scope="col"></th>#}
-{#                    <th scope="col"></th>#}
-{#                    <th scope="col"></th>#}
                     <th scope="col">Assigned At</th>
                 {% else %}
                     <th scope="col"></th>
@@ -72,7 +73,7 @@
                                 AWAITING ADMIN APPROVAL ...
                             {% endif %}
                         {% elseif is_granted('ROLE_TECHNICIAN') or is_granted('ROLE_CLIENT') %}
-                            <p class="text-info">{{ ticket.technician }}</p>
+                            <p class="text-black-50">{{ ticket.technician }}</p>
                         {% endif %}
                     </td>
                     <td>{{ ticket.customer }}</td>
@@ -90,6 +91,8 @@
                                     <p class="text-danger"> {{ ticket.status }}</p>
                                 {% elseif ticket.status == "ASSIGNED" %}
                                     <p class="text-info"> {{ ticket.status }}</p>
+                                {% elseif ticket.status == "DONE" %}
+                                    <p class="text-success"> {{ ticket.status }}</p>
                                 {% else %}
                                     <p class="text-dark">OPEN</p>
                                 {% endif %}
@@ -102,9 +105,26 @@
                         <td><a class="text-danger" href="{{ path('ticket_delete', {'id': ticket.id}) }}">Delete</a></td>
                     {% endif %}
                     {% if ticket.status == "ASSIGNED" %}
-                        <td>{{ ticket.assignmentDate|date("m/d/Y") }}</td>
-                        {% else %}
+                        <td>
+                            {{ ticket.assignmentDate|date("m/d/Y") }}
+                        </td>
+                    {% else %}
                         <td></td>
+                    {% endif %}
+                    {#                            Show mark as done if current technician is assigned to ticket #}
+                    {% if is_granted('ROLE_TECHNICIAN') and is_granted('IS_AUTHENTICATED_FULLY') and ticket.status != "DONE" %}
+                        {% if ticket.technician is not null  %}
+                            {% if ticket.technician.id == app.user.id %}
+                                <td><a class="text-info" href="{{ path('ticket_done', {'id': ticket.id}) }}">
+                                        Mark as done</a></td>
+                            {% else %}
+                                <td></td>
+                            {% endif %}
+                            {% else %}
+                                <td></td>
+                        {% endif %}
+                        {% else %}
+                            <td></td>
                     {% endif %}
                 </tr>
             {% endfor %}

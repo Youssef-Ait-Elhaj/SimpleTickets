@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/dashboard.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/ticket/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ticket/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +232,8 @@
       <workItem from="1592383738718" duration="13201000" />
       <workItem from="1592408956896" duration="458000" />
       <workItem from="1592409442220" duration="14761000" />
-      <workItem from="1592470011934" duration="14731000" />
+      <workItem from="1592470011934" duration="21721000" />
+      <workItem from="1592557141219" duration="6808000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -290,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592497516787</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed Assignment Date offset issue">
+      <created>1592505272906</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592505272906</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +322,8 @@
     <MESSAGE value="Savepoint4" />
     <MESSAGE value="Savepoint5" />
     <MESSAGE value="Finished essential functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished essential functionality" />
+    <MESSAGE value="Fixed Assignment Date offset issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Assignment Date offset issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="30" width="696" height="734" key="#PHP" timestamp="1591793717034">
@@ -342,10 +358,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="293" y="42" width="784" height="709" key="#phpunit.xml.dist/0.30.1366.738@0.30.1366.738" timestamp="1591793740468" />
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592497515100">
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592505272330">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592497515100" />
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592505272330" />
     <state x="466" y="157" width="424" height="480" key="FileChooserDialogImpl" timestamp="1591009043068">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -394,17 +410,17 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="169" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1592231435187" />
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592497522034">
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592505274701">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592497522034" />
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592505274701" />
     <state x="347" y="177" width="672" height="677" key="run.anything.popup" timestamp="1592385984086">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="347" y="177" width="672" height="677" key="run.anything.popup/0.30.1366.738@0.30.1366.738" timestamp="1592385984086" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592260339284">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1592563852712">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738@0.30.1366.738" timestamp="1592260339284" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738@0.30.1366.738" timestamp="1592563852712" />
   </component>
 </project>

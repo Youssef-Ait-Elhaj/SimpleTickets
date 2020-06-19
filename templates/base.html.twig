@@ -8,15 +8,57 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
             <link rel="stylesheet" href="/css/bootstrap.min(2).css"/>
 {#            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">#}
-            <style>
-                .priovh {
-                    background-color: #ff0000;
-                }
-            </style>
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">SimpleTickets</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('tickets_index') }}">Browse Tickets</a>
+                    </li>
+                </ul>
+{#                <form class="form-inline my-2 my-lg-0">#}
+{#                    <input class="form-control mr-sm-2" type="text" placeholder="Search">#}
+{#                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>#}
+{#                </form>#}
+                <div>
+                    <li style="list-style: none" class="nav-item">
+{#                        {% if is_granted('ROLE_ADMIN') %}#}
+{#                            <a style="color: white" class="nav-link" href="">Logged In As ADMIN - {{ app.user }}</a>#}
+{#                        {% elseif is_granted('ROLE_TECHNICIAN') %}#}
+{#                            <a style="color: white" class="nav-link" href="">Logged In As TECHNICIAN - {{ app.user }}</a>#}
+{#                        {% elseif is_granted('ROLE_CLIENT') %}#}
+{#                            <a style="color: white" class="nav-link" href="">Logged In As CLIENT - {{ app.user }}</a>#}
+{#                        {% endif %}#}
+
+                        {% if app.user %}
+                            <div class="mb-3">
+                                <p style="color: white">You are logged in as <i>{{ app.user.username }}</i>, <a href="{{ path('app_logout') }}">Logout</a></p>
+                            </div>
+                        {% endif %}
+                    </li>
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}
             <script src="/js/jquery.min.js"></script>
             <script src="/js/popper.min.js"></script>
