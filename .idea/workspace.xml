@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-    </list>
+    <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +225,7 @@
       <workItem from="1592557141219" duration="15650000" />
       <workItem from="1592592504624" duration="4909000" />
       <workItem from="1592654880470" duration="3051000" />
-      <workItem from="1593076746340" duration="830000" />
+      <workItem from="1593076746340" duration="1131000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -321,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592596252211</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Change initial admin credentials in UserFixtures">
+      <created>1593077787263</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1593077787263</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +347,8 @@
     <MESSAGE value="Finished overall functionality is working, still need to cleanup code" />
     <MESSAGE value="Fixed #1 and #3" />
     <MESSAGE value="Fixed #1 &amp; #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed #1 &amp; #3" />
+    <MESSAGE value="Change initial admin credentials in UserFixtures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change initial admin credentials in UserFixtures" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="30" width="696" height="734" key="#PHP" timestamp="1591793717034">
