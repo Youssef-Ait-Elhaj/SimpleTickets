@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f09e8e42-4ef6-4f03-9f67-9eee606fbc3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ticket/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ticket/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +226,9 @@
       <workItem from="1592409442220" duration="14761000" />
       <workItem from="1592470011934" duration="21721000" />
       <workItem from="1592557141219" duration="15650000" />
-      <workItem from="1592592504624" duration="3632000" />
+      <workItem from="1592592504624" duration="4909000" />
+      <workItem from="1592654880470" duration="3051000" />
+      <workItem from="1593076746340" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="Added Ticket Entity">
       <created>1592165942781</created>
@@ -313,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592579619110</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed #1 &amp; #3">
+      <created>1592596252211</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592596252211</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +341,9 @@
     <MESSAGE value="Fixed Assignment Date offset issue" />
     <MESSAGE value="Finished Technician functionality" />
     <MESSAGE value="Finished overall functionality is working, still need to cleanup code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished overall functionality is working, still need to cleanup code" />
+    <MESSAGE value="Fixed #1 and #3" />
+    <MESSAGE value="Fixed #1 &amp; #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed #1 &amp; #3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="325" y="30" width="696" height="734" key="#PHP" timestamp="1591793717034">
@@ -368,10 +378,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="293" y="42" width="784" height="709" key="#phpunit.xml.dist/0.30.1366.738@0.30.1366.738" timestamp="1591793740468" />
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592579618527">
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2" timestamp="1592596250303">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592579618527" />
+    <state x="178" y="30" width="999" height="734" key="CommitChangelistDialog2/0.30.1366.738@0.30.1366.738" timestamp="1592596250303" />
     <state x="466" y="157" width="424" height="480" key="FileChooserDialogImpl" timestamp="1591009043068">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
@@ -420,10 +430,10 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="169" y="30" key="SettingsEditor/0.30.1366.738@0.30.1366.738" timestamp="1592231435187" />
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592579620938">
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2" timestamp="1592596258628">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592579620938" />
+    <state x="278" y="131" width="800" height="532" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1592596258628" />
     <state x="347" y="177" width="672" height="677" key="run.anything.popup" timestamp="1592571400362">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
